@@ -3,12 +3,10 @@ class MyList:
         self.List = List
 
     def __add__(self, rhs):
-        self.List.pop()
-        self.List.pop()
-        for i in self.List:
-                rhs.List.append(i)
-                
-        return rhs.List
+        for i in rhs.List:
+            if i not in self.List:
+                self.List.append(i)
+        return self.List
     
 
 
